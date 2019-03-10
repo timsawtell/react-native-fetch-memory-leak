@@ -8,7 +8,7 @@
   },
   "dependencies": {
     "react": "16.8.3",
-    "react-native": "0.59.0-rc.3"
+    "react-native": "git://github.com/timsawtell/react-native.git"
   },
   "devDependencies": {
     "@babel/core": "^7.3.4",
