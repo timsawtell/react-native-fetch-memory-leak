@@ -7,13 +7,14 @@ export default class App extends Component {
     super(props);
     this.state = {
       gets: 0,
-      leakyDataPressed: false
+      movies: []
     }
   }
 
   componentDidMount() {
     this.hitAnAPI();
   }
+  
   hitAnAPI = () => {
     this.getMoviesFromApiAsync().then(this.doSomethingWithData);
   }
@@ -31,11 +32,13 @@ export default class App extends Component {
   }
 
   doSomethingWithData = (movies) => {
+    // here is where the dev would move the final movies array data into their state system of choice. 
+    // For this example we'll use React component state.
     this.setState({
-      gets: this.state.gets + 1
+      gets: this.state.gets + 1,
+      movies
     });
-    console.log(JSON.stringify(movies))
-    setTimeout(this.hitAnAPI, 300) // start all over again
+    setTimeout(this.hitAnAPI) // start all over again to test out the memory management changes 
   }
 
   render() {
